@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: alertmanager-ingress
+  namespace: monitoring
+spec:
+  rules:
+  - host: alertmanager.you.com
+    http:
+      paths:
+      - backend:
+          serviceName: alertmanager-main
+          servicePort: 9093
